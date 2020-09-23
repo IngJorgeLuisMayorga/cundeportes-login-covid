@@ -1,0 +1,211 @@
+@form-radius: 0.5em;
+
+form.form-signin {
+  display: block;
+
+  min-width: 200px;
+  width: calc(100% - 4em);
+  max-width: 800px;
+
+  min-height: 100px;
+
+  background-color: #f0f0f0;
+
+  border-radius: @form-radius;
+
+  -webkit-box-shadow: 0px 0px 17px 0px rgba(148, 148, 148, 1);
+  -moz-box-shadow: 0px 0px 17px 0px rgba(148, 148, 148, 1);
+  box-shadow: 0px 0px 17px 0px rgba(148, 148, 148, 1);
+}
+
+.form-header {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0em 1em;
+  background-color: white;
+  border-top-right-radius: @form-radius;
+  border-top-left-radius: @form-radius;
+}
+
+.form-content {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1em;
+}
+
+.form-footer {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 1em;
+}
+
+.form-title {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 20px;
+  padding: 0em;
+  margin: 0em;
+  text-align: left;
+}
+
+.row--park{
+
+    img{
+        height: 50px !important;
+    }
+    h1{
+        height: 50px !important;
+        span{
+          font-size: 25px;
+          padding: 1em;
+        }
+
+        select{
+          background: none;
+          outline: none;
+          border: none;
+          margin-left: 1em;
+        }
+
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    h5{
+        height: 50px !important;
+        span{
+          font-size: 25px;
+          padding: 1em;
+        }
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+        align-self: auto;
+    }
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.row--booking{
+  
+  display: block;
+  width: 100%;
+
+  ul{
+    width: 100%;
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+
+  }
+
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.row--booking{
+  display: block;
+  width: 100%;
+}
+.row--user{
+  display: block;
+  width: 100%; 
+}
+@media (max-width: 668px) {
+  .row--booking{
+  
+    display: block;
+    width: 100%;
+  }
+}

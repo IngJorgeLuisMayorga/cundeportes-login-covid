@@ -1,0 +1,70 @@
+import { Component, Vue } from 'vue-property-decorator';
+import UIPictureImageComponent from '@/components/images/picture.image.vue'; // @ is an alias to /src
+import UICCInputComponent from '@/components/inputs/cc.input.vue'; // @ is an alias to /src
+import UISubmitButtonComponent from '@/components/buttons/submit.button.vue'; // @ is an alias to /src
+
+import { getUserByCedula } from '@/helpers/getUserByCedula.helper';
+import { getBookById } from '@/helpers/getBookById.helper';
+
+import moment from  'moment';
+
+
+@Component({
+  components: {
+    'ui-cc-input': UICCInputComponent,
+     'ui-picture': UIPictureImageComponent,
+    'ui-submit': UISubmitButtonComponent ,
+  },
+})
+export default class Home extends Vue {
+  
+  public cover = require('@/assets/cover-banner-2.jpg');
+  public cedula = '';
+
+  public onCedulaType($cedula: string): void {
+      this.cedula = $cedula;
+  }
+
+  public async doSubmit() {
+    try {
+
+        // Check is User exist for that CC
+        const cedula = this.cedula;
+        const user = await getUserByCedula(cedula);
+
+        
+        console.log(' ')
+        console.log(' ')
+        console.log(' const user = await getUserByCedula(cedula); ')
+        console.log(user)
+        console.log(' ')
+        console.log(' ')
+
+
+        if(user){
+       
+          const bookId = user.type + user.cc + '_' + moment().format('YYYYMMDD')
+          const book = await getBookById(bookId);
+       
+          // Save User Object
+          sessionStorage.setItem('user', JSON.stringify(user))
+          sessionStorage.setItem('book', JSON.stringify(book))
+
+          // Navigate to SignIn View (Old users)
+          this.$router.push({ name: 'SignIn', params: { cc: cedula } })
+
+        } else {
+
+          // Navigate to SignUp View (New Users)
+          this.$router.push({ name: 'SignUp', params: { cc: cedula } })
+        }
+
+    } catch(error) {
+      console.error(' ')
+      console.error(error)
+      console.error(' ')
+      this.$swal('Error @ doSubmit()');
+    }
+  }
+
+}
